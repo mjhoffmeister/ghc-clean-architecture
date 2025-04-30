@@ -39,26 +39,26 @@ can create multiple folders at once.
 Use the following structure when asked to create a new app according to Clean
 Architecture principles, where {AppName} is the name of the app. Use the
 top-level app folder as your workspace.
-{AppName} (folder)
-├── {AppName}.sln
-├── {AppName}.Bootstrapper (folder)
-│   ├── {AppName}.Bootstrapper.csproj (reference {AppName}.Core and {AppName}.Infrastructure)
-├── {AppName}.Core (folder)
-│   ├── {AppName}.Core.csproj
-│   ├── Domain (folder where DDD entities and value objects are defined)
-│   ├── ExternalInterfaces (folder where external interfaces are defined)
-│   ├── UseCases (folder where application use cases are defined)
-│       ├── IUseCaseInteractor.cs
-├── {AppName}.Core.UnitTests (folder)
-│   ├── {AppName}.Core.UnitTests.csproj (reference {AppName}.Core)
-│   ├── Domain (folder where DDD entities and value objects are tested; use subfolders for each entity)
-│   ├── UseCases (folder where application use cases are tested; use)
-├── {AppName}.Infrastructure (folder)
-│   ├── {AppName}.Infrastructure.csproj (reference {AppName}.Infrastructure)
-├── {AppName}.Infrastructure.IntegrationTests (folder)
-│   ├── {AppName}.Infrastructure.IntegrationTests.csproj
-├── {AppName}.WebApi (folder)
-│   ├── {AppName}.WebApi.csproj (reference {AppName}.Core and {AppName}.Bootstrapper)
+{AppName} (folder)  
+├── {AppName}.sln  
+├── {AppName}.Bootstrapper (folder)  
+│   ├── {AppName}.Bootstrapper.csproj (reference {AppName}.Core and {AppName}.Infrastructure)  
+├── {AppName}.Core (folder)  
+│   ├── {AppName}.Core.csproj  
+│   ├── Domain (folder where DDD entities and value objects are defined)  
+│   ├── ExternalInterfaces (folder where external interfaces are defined)  
+│   ├── UseCases (folder where application use cases are defined)  
+│       ├── IUseCaseInteractor.cs  
+├── {AppName}.Core.UnitTests (folder)  
+│   ├── {AppName}.Core.UnitTests.csproj (reference {AppName}.Core)  
+│   ├── Domain (folder where DDD entities and value objects are tested; use subfolders for each entity)  
+│   ├── UseCases (folder where application use cases are tested; use)  
+├── {AppName}.Infrastructure (folder)  
+│   ├── {AppName}.Infrastructure.csproj (reference {AppName}.Infrastructure)  
+├── {AppName}.Infrastructure.IntegrationTests (folder)  
+│   ├── {AppName}.Infrastructure.IntegrationTests.csproj  
+├── {AppName}.WebApi (folder)  
+│   ├── {AppName}.WebApi.csproj (reference {AppName}.Core and {AppName}.Bootstrapper)  
 
 Use `dotnet new sln` to create a solution file and add all projects to the
 solution.
