@@ -75,12 +75,12 @@ Each use case should be defined in its own folder under the UseCases folder, and
 each use case should have its own request and response records and a boundary
 interface. For example, if the use case is called "CreateUser", the folder
 structure would look like this:
-|-- UseCases
-|   |-- CreateUser
-|       |-- CreateUserRequest.cs
-|       |-- CreateUserResponse.cs
-|       |-- ICreateUserBoundary.cs
-|       |-- CreateUserInteractor.cs
+|-- UseCases  
+|   |-- CreateUser  
+|       |-- CreateUserRequest.cs  
+|       |-- CreateUserResponse.cs  
+|       |-- ICreateUserBoundary.cs  
+|       |-- CreateUserInteractor.cs  
 
 Use case boundary interfaces should have a TOutput type parameter and contain
 methods for relevant use case events. For example, if the use case is called
