@@ -48,7 +48,7 @@ top-level app folder as your workspace.
 │   ├── Domain (folder where DDD entities and value objects are defined)  
 │   ├── ExternalInterfaces (folder where external interfaces are defined)  
 │   ├── UseCases (folder where application use cases are defined)  
-│       ├── IUseCaseInteractor.cs  
+│   |   ├── IUseCaseInteractor.cs  
 ├── {AppName}.Core.UnitTests (folder)  
 │   ├── {AppName}.Core.UnitTests.csproj (reference {AppName}.Core)  
 │   ├── Domain (folder where DDD entities and value objects are tested; use subfolders for each entity)  
@@ -74,13 +74,13 @@ Delete default Class1.cs and UnitTest1.cs files.
 Each use case should be defined in its own folder under the UseCases folder, and
 each use case should have its own request and response records and a boundary
 interface. For example, if the use case is called "CreateUser", the folder
-structure would look like this:
+structure would look like this:  
 |-- UseCases  
 |   |-- CreateUser  
-|       |-- CreateUserRequest.cs  
-|       |-- CreateUserResponse.cs  
-|       |-- ICreateUserBoundary.cs  
-|       |-- CreateUserInteractor.cs  
+|   |   |-- CreateUserRequest.cs  
+|   |   |-- CreateUserResponse.cs  
+|   |   |-- ICreateUserBoundary.cs  
+|   |   |-- CreateUserInteractor.cs  
 
 Use case boundary interfaces should have a TOutput type parameter and contain
 methods for relevant use case events. For example, if the use case is called
