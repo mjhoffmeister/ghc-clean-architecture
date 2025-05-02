@@ -20,8 +20,8 @@ used in GitHub Copilot's Agent mode to create an API for a to-do application.
 It's recommended that you use Claude 3.7 Sonnet for your model.
 
 ```
-Create a new API called Todo that follows Clean Architecture principals. Add a
-use cases for creating and retrieving to-do items.
+Create a new API called Todo that follows Clean Architecture principals. Add use
+cases for creating and retrieving to-do items.
 ```
 
 ## References
