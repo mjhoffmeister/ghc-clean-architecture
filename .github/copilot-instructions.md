@@ -1,4 +1,3 @@
-````instructions
 Use .NET 8 and C# for all code.
 
 Use DDD principals when creating domain-layer entities and value objects, and 
@@ -107,4 +106,3 @@ before implementing anything. Ensure there's only on assertion per test.
 
 After creating tests, ensure they pass before moving on. Make sure all files are
 saved before running the tests.
-````
