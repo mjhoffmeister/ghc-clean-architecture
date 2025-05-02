@@ -1,3 +1,4 @@
+````instructions
 Use .NET 8 and C# for all code.
 
 Use DDD principals when creating domain-layer entities and value objects, and 
@@ -39,26 +40,29 @@ can create multiple folders at once.
 Use the following structure when asked to create a new app according to Clean
 Architecture principles, where {AppName} is the name of the app. Use the
 top-level app folder as your workspace.
-{AppName} (folder)  
-├── {AppName}.sln  
-├── {AppName}.Bootstrapper (folder)  
-│   ├── {AppName}.Bootstrapper.csproj (reference {AppName}.Core and {AppName}.Infrastructure)  
-├── {AppName}.Core (folder)  
-│   ├── {AppName}.Core.csproj  
-│   ├── Domain (folder where DDD entities and value objects are defined)  
-│   ├── ExternalInterfaces (folder where external interfaces are defined)  
-│   ├── UseCases (folder where application use cases are defined)  
-│   |   ├── IUseCaseInteractor.cs  
-├── {AppName}.Core.UnitTests (folder)  
-│   ├── {AppName}.Core.UnitTests.csproj (reference {AppName}.Core)  
-│   ├── Domain (folder where DDD entities and value objects are tested; use subfolders for each entity)  
-│   ├── UseCases (folder where application use cases are tested; use)  
-├── {AppName}.Infrastructure (folder)  
-│   ├── {AppName}.Infrastructure.csproj (reference {AppName}.Infrastructure)  
-├── {AppName}.Infrastructure.IntegrationTests (folder)  
-│   ├── {AppName}.Infrastructure.IntegrationTests.csproj  
-├── {AppName}.WebApi (folder)  
-│   ├── {AppName}.WebApi.csproj (reference {AppName}.Core and {AppName}.Bootstrapper)  
+
+```
+{AppName}/
+├── {AppName}.sln
+├── {AppName}.Bootstrapper/
+│   └── {AppName}.Bootstrapper.csproj (reference {AppName}.Core and {AppName}.Infrastructure)
+├── {AppName}.Core/
+│   ├── {AppName}.Core.csproj
+│   ├── Domain/ (folder where DDD entities and value objects are defined)
+│   ├── ExternalInterfaces/ (folder where external interfaces are defined)
+│   └── UseCases/ (folder where application use cases are defined)
+│       └── IUseCaseInteractor.cs
+├── {AppName}.Core.UnitTests/
+│   ├── {AppName}.Core.UnitTests.csproj (reference {AppName}.Core)
+│   ├── Domain/ (folder where DDD entities and value objects are tested; use subfolders for each entity)
+│   └── UseCases/ (folder where application use cases are tested)
+├── {AppName}.Infrastructure/
+│   └── {AppName}.Infrastructure.csproj (reference {AppName}.Core)
+├── {AppName}.Infrastructure.IntegrationTests/
+│   └── {AppName}.Infrastructure.IntegrationTests.csproj
+└── {AppName}.WebApi/
+    └── {AppName}.WebApi.csproj (reference {AppName}.Core and {AppName}.Bootstrapper)
+```
 
 Use `dotnet new sln` to create a solution file and add all projects to the
 solution.
@@ -74,13 +78,16 @@ Delete default Class1.cs and UnitTest1.cs files.
 Each use case should be defined in its own folder under the UseCases folder, and
 each use case should have its own request and response records and a boundary
 interface. For example, if the use case is called "CreateUser", the folder
-structure would look like this:  
-|-- UseCases  
-|   |-- CreateUser  
-|   |   |-- CreateUserRequest.cs  
-|   |   |-- CreateUserResponse.cs  
-|   |   |-- ICreateUserBoundary.cs  
-|   |   |-- CreateUserInteractor.cs  
+structure would look like this:
+
+```
+UseCases/
+└── CreateUser/
+    ├── CreateUserRequest.cs
+    ├── CreateUserResponse.cs
+    ├── ICreateUserBoundary.cs
+    └── CreateUserInteractor.cs
+```
 
 Use case boundary interfaces should have a TOutput type parameter and contain
 methods for relevant use case events. For example, if the use case is called
@@ -100,3 +107,4 @@ before implementing anything. Ensure there's only on assertion per test.
 
 After creating tests, ensure they pass before moving on. Make sure all files are
 saved before running the tests.
+````
